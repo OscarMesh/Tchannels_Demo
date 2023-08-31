@@ -9,9 +9,9 @@ const Root = () => {
       <div className="p-4">
         <Outlet />
       </div>
-      <div>
+      {/* <div>
         A T-CHANNELS DEMO--R&D
-      </div>
+      </div> */}
     </>
   );
 };
