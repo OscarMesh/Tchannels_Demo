@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Page1 = () => {
   const plans = [
@@ -43,14 +44,24 @@ const Page1 = () => {
                 ))}
               </ul>
             </div>
-            <button className="rounded-lg p-2 bg-green-500  mt-2 text-white hover:bg-opacity-40 ">
+            <Link
+              to={{
+                pathname: "/page2",
+              }}
+              state={{
+                plan,
+              }}
+              className="mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         ))}
       </div>
 
-      <div className="mt-10 font-semibold text-sm">Have a question? Visit our T-CHANNELS FAQ</div>
+      <div className="mt-10 font-semibold text-sm">
+        Have a question? Visit our T-CHANNELS FAQ
+      </div>
     </div>
   );
 };
