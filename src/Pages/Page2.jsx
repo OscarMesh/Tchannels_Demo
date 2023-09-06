@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Page2 = () => {
+  const navigate = useNavigate();
   const { state } = useLocation();
-  const [name, setName] = React.useState("Oscar");
-  const [cin, setCin] = React.useState("12341234");
-  const [address, setAddress] = React.useState("Tizeti Lekki");
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [address, setAddress] = React.useState("");
+
+  function getUserData(email, accountName) {
+    console.log(`Received email: ${email}`);
+    console.log(`Received accountName: ${accountName}`);
+    setEmail(email);
+    setName(accountName);
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  useEffect(() => {
+    if (!state?.plan) {
+      navigate("/");
+    }
+  }, [state]);
 
   return (
     <div className="h-full p-4">
@@ -54,14 +72,14 @@ const Page2 = () => {
               className="block text-gray-600 font-semibold mb-2"
               htmlFor="cin"
             >
-              Customer Identification Number (CIN):
+              Customer's Email Address
             </label>
             <input
               className="border rounded-lg p-2 w-full"
               type="text"
               id="cin"
-              value={cin}
-              onChange={(e) => setCin(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
