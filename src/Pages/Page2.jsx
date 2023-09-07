@@ -34,7 +34,7 @@ const Page2 = () => {
         <p>{state.plan.name}</p>
         <p>{state.plan.price}</p>
         <ul className="mt-2 space-y-1">
-          {state?.plan?.features.map((feature, index) => (
+          {state.plan.features.map((feature, index) => (
             <li key={index} className="flex items-center">
               <FaCheck className="w-4 h-4 text-green-500 mr-2" />
               {feature}
