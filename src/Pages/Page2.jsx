@@ -56,23 +56,26 @@ const Page2 = () => {
               type="text"
               id="name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              // onChange={(e) => setName(e.target.value)}
+              disabled
               required
             />
           </div>
           <div className="mb-4">
             <label
               className="block text-gray-600 font-semibold mb-2"
-              htmlFor="cin"
+              htmlFor="email"
             >
               Customer's Email Address
             </label>
             <input
               className="border rounded-lg p-2 w-full"
               type="text"
-              id="cin"
+              id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+
+              disabled
+              // onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
