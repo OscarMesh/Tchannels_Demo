@@ -10,7 +10,7 @@ const Page2 = () => {
   const [address, setAddress] = React.useState("");
 
   useEffect(() => {
-    if (!state?.plan) {
+    if (!state.plan) {
       navigate("/");
     }
 
@@ -30,8 +30,8 @@ const Page2 = () => {
       {/* Selected Plan */}
       <div className="mt-6">
         <h4 className="text-lg font-semibold">Selected Plan:</h4>
-        <p>{state?.plan?.name}</p>
-        <p>{state?.plan?.price}</p>
+        <p>{state.plan.name}</p>
+        <p>{state.plan.price}</p>
         <ul className="mt-2 space-y-1">
           {state?.plan?.features.map((feature, index) => (
             <li key={index} className="flex items-center">
