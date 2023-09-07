@@ -1,21 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaCheck } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Page1 = () => {
-  const navigate = useNavigate();
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [address, setAddress] = React.useState("");
-
-  useEffect(() => {
-    if (window.myAppData) {
-      setEmail(window.myAppData.email);
-      setName(window.myAppData.accountName);
-      console.log(window.myAppData);
-    }
-  }, []);
-
   const plans = [
     {
       name: "Basic Plan",
@@ -44,7 +31,7 @@ const Page1 = () => {
       {/* Plans */}
       <div className="mt-6 space-y-4">
         {plans.map((plan, index) => (
-          <div>
+          <div key={index}>
             <div key={index} className="bg-white rounded-lg shadow p-4">
               <h4 className="text-lg font-semibold">{plan.name}</h4>
               <p className="text-gray-600">{plan.price}</p>
