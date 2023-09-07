@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
-import { getUserData } from "../get-user-data";
 
 const Page2 = () => {
   const navigate = useNavigate();
@@ -9,13 +8,15 @@ const Page2 = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [address, setAddress] = React.useState("");
-
-
+  const [dataFromAndroid, setDataFromAndroid] = React.useState("")
 
   useEffect(() => {
-    getUserData();
-
-
+    if (window.AndroidApp && window.AndroidApp.getUserData) {
+      // Define a JavaScript function that can receive data from Android WebView
+      window.getUserData = (data) => {
+        setDataFromAndroid(data);
+      };
+    }
   }, []);
 
   useEffect(() => {
