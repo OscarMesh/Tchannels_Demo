@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
+import { getUserData } from "../get-user-data";
 
 const Page2 = () => {
   const navigate = useNavigate();
@@ -9,15 +10,12 @@ const Page2 = () => {
   const [email, setEmail] = React.useState("");
   const [address, setAddress] = React.useState("");
 
-  function getUserData(email, accountName) {
-    console.log(`Received email: ${email}`);
-    console.log(`Received accountName: ${accountName}`);
-    setEmail(email);
-    setName(accountName);
-  }
+
 
   useEffect(() => {
     getUserData();
+
+
   }, []);
 
   useEffect(() => {
