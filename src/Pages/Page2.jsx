@@ -17,6 +17,7 @@ const Page2 = () => {
     if (window.myAppData) {
       setEmail(window.myAppData.email);
       setName(window.myAppData.accountName);
+      console.log(window.myAppData);
     }
   }, [state, navigate]);
 
