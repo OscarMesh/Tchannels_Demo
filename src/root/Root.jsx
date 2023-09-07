@@ -4,7 +4,7 @@ const Root = () => {
   return (
     <>
       <div className="bg-lime-700 p-2 font-bold text-white text-center">
-        T-CHANNELS DEMO
+        T-CHANNELS DEMO APP
       </div>
       <div className="p-4">
         <Outlet />
