@@ -9,10 +9,14 @@
   <body>
     <div id="root"></div>
     <script>
-      window.myAppData = {
-        email: "example@example.com",
-        accountName: "My Account",
-      };
+      function getUserData(email, accountName) {
+        // Your code to handle the data received from Android WebView
+        console.log(`Received email: ${email}, accountName: ${accountName}`);
+        window.myAppData = {
+          email,
+          accountName,
+        };
+      }
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
