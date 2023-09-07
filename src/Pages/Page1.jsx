@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Page1 = () => {
+  useEffect(() => {
+    if (window.myAppData) {
+      console.log(window.myAppData.accountName);
+    }
+  }, []);
   const plans = [
     {
       name: "Basic Plan",
