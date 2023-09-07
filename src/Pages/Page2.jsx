@@ -8,15 +8,17 @@ const Page2 = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [address, setAddress] = React.useState("");
-  const [dataFromAndroid, setDataFromAndroid] = React.useState("")
+  const [dataFromAndroid, setDataFromAndroid] = React.useState("");
+
+  function getUserData(email, accountName) {
+    // Your code to handle the data received from Android WebView
+    console.log(`Received email: ${email}, accountName: ${accountName}`);
+    setName(accountName);
+    setEmail(email);
+  }
 
   useEffect(() => {
-    if (window.AndroidApp && window.AndroidApp.getUserData) {
-      // Define a JavaScript function that can receive data from Android WebView
-      window.getUserData = (data) => {
-        setDataFromAndroid(data);
-      };
-    }
+    getUserData();
   }, []);
 
   useEffect(() => {
