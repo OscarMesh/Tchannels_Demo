@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Page1 = () => {
+  const navigate = useNavigate();
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [address, setAddress] = React.useState("");
+
+  useEffect(() => {
+    if (window.myAppData) {
+      setEmail(window.myAppData.email);
+      setName(window.myAppData.accountName);
+      console.log(window.myAppData);
+    }
+  }, []);
+
   const plans = [
     {
       name: "Basic Plan",
